@@ -1,4 +1,4 @@
-require "lib/scenery/scenery.rb"
+require "lib/scenery/scenery"
 
 def tick args
   @title_label ||= TitleLabel.new
@@ -26,13 +26,13 @@ class Game
     super
 
     if inputs.mouse.click
-      case $game.current_scene_name
+      case @current_scene_name
       when :title_scene
-        $game.current_scene_name = :game_scene
+        @current_scene_name = :game_scene
       when :game_scene
-        $game.current_scene_name = :game_over_scene
+        @current_scene_name = :game_over_scene
       when :game_over_scene
-        $game.current_scene_name = :title_scene
+        @current_scene_name = :title_scene
       end
     end
   end
