@@ -1,5 +1,7 @@
 module Scenery
   class Registry
+    attr_accessor :root
+
     class << self
       def instance
         @instance ||= new
